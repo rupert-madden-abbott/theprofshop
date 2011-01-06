@@ -46,4 +46,8 @@ Theprofshop::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+  
+  # This prevents SASS from compiling in production. Instead this is handled
+  # before commit with a hook located at .git/hooks/pre-commit
+  Sass::Plugin.options[:never_update] = true
 end

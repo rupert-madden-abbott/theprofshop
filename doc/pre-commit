@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+Dir['public/stylesheets/**/*.scss'].each do |sass|
+  basename = sass.gsub(/public\/stylesheets\/sass\//, '').gsub(/\.scss$/, '')
+  next if basename.match(/^_/)   # skip includes
+  css = "public/stylesheets/#{basename}.css"
+  puts "Compiling #{sass} -> #{css}"
+  system "sass #{sass} #{css}"
+  system "git add #{css}"
+end
