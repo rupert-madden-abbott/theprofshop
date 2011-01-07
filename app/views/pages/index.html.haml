@@ -13,3 +13,7 @@
       %td= page.content
       %td= link_to image_tag('edit.png'), edit_page_path(page), :title => 'Edit'
       %td= link_to image_tag('delete.png'), page, :confirm => 'Are you sure?', :method => :delete, :title => 'Delete'
+      
+%p= will_paginate @pages
+
+%p= page_entries_info @pages

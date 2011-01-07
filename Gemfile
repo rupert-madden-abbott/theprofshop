@@ -11,3 +11,4 @@ gem 'jquery-rails'
 
 gem 'paperclip'
 gem 'RedCloth'
+gem 'will_paginate', '3.0.pre2'
