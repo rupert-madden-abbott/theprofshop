@@ -1,0 +1,11 @@
+development:
+  domain: localhost:3000
+  email: theprofshop@madden-abbott.com
+
+test:
+  domain: test.host
+  email: theprofshop@madden-abbott.com
+
+production:
+  domain: example.com
+  email: theprofshop@madden-abbott.com
