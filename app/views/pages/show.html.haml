@@ -1,0 +1,18 @@
+- title "Page"
+
+%p
+  %strong Name:
+  = @page.name
+%p
+  %strong Permalink:
+  = @page.permalink
+%p
+  %strong Content:
+  = @page.content
+
+%p
+  = link_to "Edit", edit_page_path(@page)
+  |
+  = link_to "Destroy", @page, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", pages_path
