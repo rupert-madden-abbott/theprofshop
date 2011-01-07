@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   helper_method :sort_col, :sort_direction
   
   def index
-    @pages = Page.order(sort_col + " " + sort_direction).paginate(:per_page => "10", :page => params[:page])
+    @pages = Page.search(params[:search]).order(sort_col + " " + sort_direction).paginate(:per_page => "10", :page => params[:page])
   end
 
   def show

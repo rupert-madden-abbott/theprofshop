@@ -1,5 +1,12 @@
 - title "Pages"
 
+= form_tag pages_path, :method => 'get' do 
+  = hidden_field_tag :direction, params[:direction]
+  = hidden_field_tag :sort, params[:sort]
+  %p
+    = text_field_tag :search, params[:search] 
+    = image_submit_tag "search.png", :name => nil, :title => "Search"
+
 %table.pretty
   %tr
     %th= sortable 'name'
