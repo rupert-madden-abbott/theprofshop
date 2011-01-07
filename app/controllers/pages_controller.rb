@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
+  helper_method :sort_col, :sort_direction
+  
   def index
-    @pages = Page.all
+    @pages = Page.order(sort_col + " " + sort_direction)
   end
 
   def show
@@ -45,5 +47,15 @@ class PagesController < ApplicationController
     @page.destroy
     flash[:notice] = "Successfully destroyed page."
     redirect_to pages_url
+  end
+  
+  private
+  
+  def sort_col
+    Page.column_names.include?(params[:sort]) ? params[:sort] : 'name'
+  end
+  
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : 'asc'
   end
 end

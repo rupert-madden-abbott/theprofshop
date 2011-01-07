@@ -59,3 +59,18 @@ a {
     margin: 8px 10px; }
   .error_messages ul {
     margin: 0; }
+
+table.pretty {
+  border-collapse: collapse; }
+  table.pretty td,
+  table.pretty th {
+    padding: 4px 10px;
+    border: solid 1px #AAA; }
+  table.pretty th .current {
+    padding-right: 16px;
+    background-repeat: no-repeat;
+    background-position: right center; }
+  table.pretty th .asc {
+    background-image: url(/images/up.png); }
+  table.pretty th .desc {
+    background-image: url(/images/down.png); }

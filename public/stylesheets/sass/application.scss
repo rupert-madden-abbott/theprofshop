@@ -1,15 +1,12 @@
 $primary_color: #4b7399;
 
 body {
-  background-color: $primary_color;
-  font: {
-    family: Verdana, Helvetica, Arial;
-    size: 14px; }; }
+  background-color: $primary_color; 
+  font: { family: Verdana, Helvetica, Arial; size: 14px; }; }
 
 a {
   color: blue;
-  img {
-    border: none; } }
+  img { border: none; } }
 
 .clear {
   clear: both;
@@ -39,8 +36,7 @@ a {
   background-color: #ffcccc;
   border: solid 1px #cc6666; }
 
-.fieldWithErrors {
-  display: inline; }
+.fieldWithErrors { display: inline; }
 
 .error_messages {
   width: 400px;
@@ -49,18 +45,29 @@ a {
   padding-bottom: 12px;
   margin-bottom: 20px;
   background-color: #f0f0f0;
-  font: {
-    size: 12px; };
+  font: { size: 12px; };
   h2 {
     text-align: left;
     padding: 5px 5px 5px 15px;
     margin: 0;
-    font: {
-      weight: bold;
-      size: 12px; };
+    font: { weight: bold; size: 12px; };
     background-color: #cc0000;
     color: white; }
-  p {
-    margin: 8px 10px; }
-  ul {
-    margin: 0; } }
+  p { margin: 8px 10px; }
+  ul { margin: 0; }
+}
+    
+table.pretty {
+  border-collapse: collapse;
+  td,
+  th {
+    padding: 4px 10px;
+    border: solid 1px #AAA; }
+  th {
+    .current {
+      padding-right: 16px;
+      background: { repeat: no-repeat; position: right center } }
+    .asc { background-image: url(/images/up.png); }
+    .desc { background-image: url(/images/down.png); }
+  }  
+}
