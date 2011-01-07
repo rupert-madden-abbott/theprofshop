@@ -1,14 +1,6 @@
-- title "Page"
+- page_title @page.name
 
-%p
-  %strong Name:
-  = @page.name
-%p
-  %strong Permalink:
-  = @page.permalink
-%p
-  %strong Content:
-  = @page.content
+= raw textilize @page.content
 
 %p
   = link_to "Edit", edit_page_path(@page)

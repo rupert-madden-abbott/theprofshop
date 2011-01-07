@@ -10,3 +10,4 @@ gem 'mocha', :group => :test
 gem 'jquery-rails'
 
 gem 'paperclip'
+gem 'RedCloth'
