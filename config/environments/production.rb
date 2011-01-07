@@ -50,4 +50,7 @@ Theprofshop::Application.configure do
   # This prevents SASS from compiling in production. Instead this is handled
   # before commit with a hook located at .git/hooks/pre-commit
   Sass::Plugin.options[:never_update] = true
+  
+  # Setup jquery and jquery-ui from CDN when in production
+  config.action_view.javascript_expansions[:defaults] = %w(https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js rails)
 end

@@ -6,6 +6,7 @@ gem 'nifty-generators', :group => :development
 gem 'haml'
 gem 'annotate'
 gem 'mongrel', '>= 1.2.0.pre2'
-gem "mocha", :group => :test
+gem 'mocha', :group => :test
+gem 'jquery-rails'
 
 gem 'paperclip'

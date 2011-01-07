@@ -22,5 +22,8 @@ Theprofshop::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
+  
+  # Setup uncompressed jquery and jquery-ui when in development
+  config.action_view.javascript_expansions[:defaults] = %w(jquery jquery-ui rails)
 end
 
