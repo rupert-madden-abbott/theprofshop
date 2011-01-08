@@ -1,26 +1,8 @@
 - title "Pages"
 
-= form_tag pages_path, :method => 'get' do 
-  = hidden_field_tag :direction, params[:direction]
-  = hidden_field_tag :sort, params[:sort]
+= form_tag pages_path, :method => 'get', :id => 'pages_search', :autocomplete => 'off' do 
   %p
     = text_field_tag :search, params[:search] 
     = image_submit_tag "search.png", :name => nil, :title => "Search"
-
-%table.pretty
-  %tr
-    %th= sortable 'name'
-    %th= sortable 'permalink'
-    %th= sortable 'content'
-    %th{:colspan => "2"}= link_to image_tag('add.png'), new_page_path, :title => 'Create'
-  - for page in @pages
-    %tr
-      %td= link_to page.name, page.permalink, :title => 'View'
-      %td= page.permalink
-      %td= page.content
-      %td= link_to image_tag('edit.png'), edit_page_path(page), :title => 'Edit'
-      %td= link_to image_tag('delete.png'), page, :confirm => 'Are you sure?', :method => :delete, :title => 'Delete'
-      
-%p= will_paginate @pages
-
-%p= page_entries_info @pages
+  #pages 
+    = render 'pages'
