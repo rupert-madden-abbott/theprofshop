@@ -1,0 +1,26 @@
+= hidden_field_tag :direction, params[:direction]
+= hidden_field_tag :sort, params[:sort]
+
+%table.pretty
+  %tr
+    <%- for attribute in model_attributes -%>
+    %th= sortable '<%= attribute.name %>'
+    <%- end -%>
+    %th{:colspan => "2"}= link_to image_tag('add.png'), new_<%= singular_name %>_path, :title => 'Create'
+  - for <%= singular_name %> in @<%= plural_name %>
+    %tr
+      <%- for attribute in model_attributes -%>
+      <%- if attribute.name == 'name' and model_attributes.include?('permalink') -%>
+      %td= link_to <%= singular_name %>.<%= attribute.name %>, <%= singular_name %>.permalink, :title => 'View'
+      <%- elsif attribute.name == 'name' -%>
+      %td= link_to <%= singular_name %>.<%= attribute.name %>, <%= singular_name %>
+      <%- else -%>
+      %td= <%= singular_name %>.<%= attribute.name %>     
+      <%- end -%>
+      <%- end -%>
+      %td= link_to image_tag('edit.png'), edit_<%= singular_name %>_path(<%= singular_name %>), :title => 'Edit'
+      %td= link_to image_tag('delete.png'), <%= singular_name %>, :confirm => 'Are you sure?', :method => :delete, :title => 'Delete'
+      
+%p= will_paginate @<%= singular_name %>, :class => 'pageable'
+
+%p= page_entries_info @<%= singular_name %>
