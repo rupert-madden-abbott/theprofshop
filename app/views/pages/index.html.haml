@@ -1,8 +1,8 @@
 - title "Pages"
 
-= form_tag pages_path, :method => 'get', :id => 'pages_search', :autocomplete => 'off' do 
+= form_tag pages_path, :method => 'get', :id => 'searchable', :autocomplete => 'off' do 
   %p
     = text_field_tag :search, params[:search] 
     = image_submit_tag "search.png", :name => nil, :title => "Search"
-  #pages 
+  #pages.archivable
     = render 'pages'
